@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectSphere - Cast Your Vote</title>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css/finalVote.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">VOTE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Voting Section -->
+  <div class="vote-container">
+    <h2>Cast Your Vote</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <p>Select your preferred candidate:</p>
+
+      <label class="candidate">
+        <input type="radio" name="candidate" value="Candidate A" required />
+        Candidate A - People First Party
+      </label>
+
+      <label class="candidate">
+        <input type="radio" name="candidate" value="Candidate B" />
+        Candidate B - Future Builders
+      </label>
+
+      <label class="candidate">
+        <input type="radio" name="candidate" value="Candidate C" />
+        Candidate C - National Unity Party
+      </label>
+
+      <button type="submit">Submit Vote</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+.dashboard {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard h2, h3 {
+    text-align: center;
+    color: #2e86de;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .add-member-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-member-form label {
+    font-weight: 500;
+  }
+  
+  .add-member-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-member-form button {
+    width: 100%;
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .add-member-form button:hover {
+    background-color: #1b4f72;
+  }
+  .vote-btn {
+    background-color: #2e86de;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .vote-btn:hover {
+    background-color: #1b4f72;
+  }
+  
+  .voted {
+    background-color: #ccc;
+    color: #333;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: not-allowed;
+  }
+    

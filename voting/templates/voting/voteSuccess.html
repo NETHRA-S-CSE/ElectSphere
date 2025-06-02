@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectSphere - Vote Submitted</title>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css/voteSuccess.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">VOTE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Confirmation Section -->
+  <div class="success-container">
+    <h2>✅ Vote Submitted Successfully!</h2>
+    <p>Thank you for participating in the democratic process.</p>
+
+    <div class="summary">
+      <h3>🧾 Voting Summary</h3>
+      <p><strong>Voter Name:</strong> {{ member.name }}</p>
+      <p><strong>Voter ID:</strong> {{ member.member_voter_id }}</p>
+      <p><strong>Selected Candidate:</strong> {{ candidate }}</p>
+      <p><strong>Time of Submission:</strong> {{ time }}</p>
+    </div>
+    
+
+    <div class="security-note">
+      <h4>🔒 Your vote is secure</h4>
+      <p>Your vote has been recorded anonymously and safely in our system. You cannot vote again in this election.</p>
+    </div>
+
+    <div class="next-steps">
+      <p>You may now return to the dashboard or homepage.</p>
+      <a href="{% url 'dashboard' %}"><button>Go to Dashboard</button></a>
+      <a href="{% url 'index' %}"><button>Return to Home</button></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

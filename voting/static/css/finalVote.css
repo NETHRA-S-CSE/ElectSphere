@@ -1,0 +1,49 @@
+.vote-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .vote-container h2 {
+    text-align: center;
+    color: #2e86de;
+  }
+  
+  .vote-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .candidate {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  
+  .candidate input {
+    margin-right: 10px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #1b4f72;
+  }
+  

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectSphere - Home</title>
+    
+</head>
+<body>
+    
+        <nav class="navbar">
+            <div class="navdiv">
+                <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+                <ul>
+                    <li><a href="{% url 'index' %}">HOME</a></li>
+                    <li><a href="{% url 'login' %}">VOTE</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    
+    <section class="bg">
+        <h1>Welcome to ElectSphere...!</h1>
+        <p>Your secure and easy digital voting platform</p>
+    </section>
+    <hr>
+    
+    <section class="steps">
+        <h1>Cast Your Vote in 4 Easy Steps</h1>
+        <dl>
+            <dt><b>Step 1: Login to your account</b></dt>
+            <dd>Log in using your registered mobile number and password to begin the voting process.</dd>
+            <dt><b>Step 2: View Family Members </b>
+            </dt>
+            <dd>If your family is registered under the same account, you can view their voting status and manage their access.</dd>
+            <dt><b>Step 3: Verify OTP </b></dt>
+            <dd>You’ll receive a One-Time Password (OTP) on your mobile. Enter it to confirm your identity.</dd>
+            <dt><b>Step 4: Cast Your Vote </b></dt>
+            <dd>Once verified, you’ll be shown the list of candidates.
+                Simply select your preferred candidate and click “Submit Vote.”</dd>
+        </dl>
+
+    </section>
+    <hr>
+    <div class="btn">
+        <a href="{% url 'login' %}"><button>VOTE NOW</button></a>
+</div>
+    <footer >
+        <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+      </footer>
+      
+
+</body>
+</html>

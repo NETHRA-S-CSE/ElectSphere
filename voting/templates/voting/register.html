@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectSphere - Register</title>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">VOTE</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Registration Form -->
+  <div class="register-container">
+    <h2>Create New Voter Account</h2>
+    <form method="POST">
+      {% csrf_token %}
+      
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" required>
+    
+      <label for="password">Create Password</label>
+      <input type="password" id="password" name="password" required>
+    
+      <label for="confirm">Confirm Password</label> <!-- ✅ Add this -->
+      <input type="password" id="confirm" name="confirm" required>
+    
+      <button type="submit">Register</button>
+    </form>
+    
+    
+    
+    
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    
+    <p class="login-link">
+      Already registered? <a href="{% url 'login' %}">Login here</a>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+  </footer>
+
+
+  
+  
+</body>
+</html>

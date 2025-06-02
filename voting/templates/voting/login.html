@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectSphere - Voter Login</title>
+    {% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+            <ul>
+                <li><a href="{% url 'index' %}">HOME</a></li>
+                <li><a href="{% url 'login' %}">VOTE</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <h2>Voter Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+          
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" required />
+          
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          
+            <button type="submit">Login</button>
+          </form>
+          
+          {% if error %}
+            <p style="color: red;">{{ error }}</p>
+          {% endif %}
+
+        <p class="register-link">
+            New user? <a href="{% url 'register' %}">Register here</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+    </footer>
+
+    <!-- <script>
+        const loginForm = document.querySelector("form");
+      
+        loginForm.addEventListener("submit", function (e) {
+          const mobile = document.getElementById("mobile").value.trim();
+          const password = document.getElementById("password").value.trim();
+      
+          // Mobile number validation
+          if (mobile.length !== 10 || isNaN(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            e.preventDefault(); // stop form submission
+            return;
+          }
+      
+          // Password validation
+          if (password.length < 4) {
+            alert("Password must be at least 4 characters long.");
+            e.preventDefault(); // stop form submission
+            return;
+          }
+      
+          // Optional: show message before redirect
+          alert("Login successful!");
+        });
+      </script> -->
+      
+</body>
+</html>

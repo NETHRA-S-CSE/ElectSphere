@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectSphere - Family Dashboard</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="{% url 'index' %}">ELECTSPHERE</a></div>
+      <ul>
+        <li><a href="{% url 'index' %}">HOME</a></li>
+        <li><a href="{% url 'login' %}">LOGOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Dashboard Section -->
+  <section class="dashboard">
+    <h2>Welcome, {{ voter.name }}</h2>
+
+    <!-- Family Members Table -->
+    <h3>Registered Family Members</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Voter ID</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in members %}
+          <tr>
+            <td>{{ member.name }}</td>
+            <td>{{ member.member_voter_id }}</td>
+            <td>
+              {% if member.has_voted %}
+                <button class="voted" disabled>Voted ✅</button>
+              {% else %}
+                <a href="{% url 'otp_verify' %}?id={{ member.id }}">
+                  <button class="vote-btn">Vote Now</button>
+                </a>
+              {% endif %}
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3">No family members yet.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <!-- Add New Member -->
+    <h3>Add Family Member</h3>
+    <form method="POST" class="add-member-form">
+      {% csrf_token %}
+      <label for="name">Member Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter name" required />
+
+      <label for="voterid">Voter ID</label>
+      <input type="text" id="voterid" name="voterid" placeholder="Enter Voter ID" required />
+
+      <button type="submit">Add Member</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ElectSphere. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

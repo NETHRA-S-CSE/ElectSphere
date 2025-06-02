@@ -1,0 +1,45 @@
+.register-container {
+    max-width: 450px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: left;
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    color: #2e86de;
+  }
+  
+  .register-container label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+  
+  .register-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+  }
+  
+  .register-container button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .login-link a {
+    color: #2e86de;
+    text-decoration: none;
+  }
+  

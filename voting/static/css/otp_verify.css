@@ -1,0 +1,58 @@
+.otp-container {
+    max-width: 400px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .otp-container h2 {
+    color: #2e86de;
+    margin-bottom: 10px;
+  }
+  
+  .otp-container p {
+    font-size: 15px;
+    color: #444;
+  }
+  
+  .otp-container form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .otp-container input {
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .otp-container button {
+    padding: 12px;
+    background-color: #2e86de;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .otp-container button:hover {
+    background-color: #1b4f72;
+  }
+  
+  .resend {
+    margin-top: 15px;
+  }
+  
+  .resend a {
+    color: #2e86de;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  

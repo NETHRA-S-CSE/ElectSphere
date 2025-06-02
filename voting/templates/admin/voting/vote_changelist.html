@@ -1,0 +1,20 @@
+{% extends "admin/change_list.html" %}
+
+{% block content %}
+  <h2>📊 Vote Summary</h2>
+  <table border="1" cellpadding="10">
+    <tr>
+      <th>Candidate</th>
+      <th>Number of Votes</th>
+    </tr>
+    {% for row in vote_data %}
+    <tr>
+      <td>{{ row.candidate }}</td>
+      <td>{{ row.count }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <hr>
+  {{ block.super }}  {# Renders the default change list view below the table #}
+{% endblock %}
